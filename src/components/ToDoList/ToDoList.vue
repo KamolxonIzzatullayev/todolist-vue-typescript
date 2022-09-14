@@ -41,10 +41,12 @@
           {{ todo.todo }}
         </h2>
         <button type="button" class="z-10 close mr-3" @click="checkTodo(todo)">
-          <span class="text-xl">&#10003;</span>
+          <span class="text-xl">{{ todo.checked ? "&times;" : "&#10003;" }}</span>
         </button>
         <button type="button" class="z-10 close" @click="delTodo(todo)">
-          <span class="text-xl">&times;</span>
+          <span class="text-xl">
+            <i class="fa fa-trash-o"></i>
+          </span>
         </button>
       </li>
     </ul>
@@ -166,5 +168,4 @@ export default class ToDoList extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../assets/tailwind.css";
-@import "./ToDoList.style.scss";
 </style>
