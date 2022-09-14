@@ -1,18 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="home container mx-auto sm:px-4">
+    <ToDoList></ToDoList>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import ToDoList from '../components/ToDoList/ToDoList.vue'; // @ is an alias to /src
 
 @Options({
   components: {
-    HelloWorld,
+    ToDoList,
   },
 })
 export default class HomeView extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+.home {
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+</style>
